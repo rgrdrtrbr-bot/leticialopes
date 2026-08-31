@@ -1,1282 +1,458 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Letícia Lopes | Hair Stylist Sênior & Consultora de Gestão de Salões</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letícia Lopes | Visagismo, Beleza & Estética Personalizada</title>
+    <meta name="description" content="Consultoria de imagem, visagismo, maquiagem profissional e estética facial sob medida por Letícia Lopes. Agendamento exclusivo com hora marcada.">
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              nude: '#FBF8F5',
-              sand: '#F3EDE4',
-              beige: '#E6DCcf',
-              caramel: '#C29F78',
-              gold: '#D4AF37',
-              rose: '#CFA899',
-              dark: '#1F1B18',
-              charcoal: '#2D2824',
-              muted: '#6E6760',
-              accentGreen: '#234638'
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rosebrand: {
+                            50: '#fffafb',
+                            100: '#fef3f6',
+                            200: '#fde8ed',
+                            300: '#fbd2dc',
+                            400: '#f7aabc',
+                            500: '#ef7d99',
+                            600: '#dd5375',
+                            700: '#b93959',
+                            800: '#9a324c',
+                            900: '#812e43',
+                        },
+                        sand: '#FAF8F5'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    }
+                }
             }
-          },
-          fontFamily: {
-            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-            sans: ['"Plus Jakarta Sans"', 'sans-serif']
-          }
         }
-      }
-    }
-  </script>
+    </script>
 
-  <style>
-    body {
-      background-color: #FBF8F5;
-      color: #1F1B18;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    
-    .font-serif-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-    }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    .glass-card {
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(207, 168, 153, 0.25);
-    }
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    .glass-nav {
-      background: rgba(251, 248, 245, 0.94);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(194, 159, 120, 0.2);
-    }
-
-    .gold-gradient-text {
-      background: linear-gradient(135deg, #8E6D43 0%, #C29F78 50%, #8E6D43 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-pattern {
-      background-image: radial-gradient(rgba(194, 159, 120, 0.12) 1px, transparent 1px);
-      background-size: 24px 24px;
-    }
-
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #F3EDE4;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #C29F78;
-      border-radius: 4px;
-    }
-  </style>
+    <style>
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+        .bg-pattern {
+            background-color: #FAF8F5;
+            background-image: radial-gradient(#fbd2dc 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Foco Acessível Universal (WCAG 2.1 AA) */
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 2px solid #b93959 !important;
+            outline-offset: 2px !important;
+        }
+    </style>
 </head>
-<body class="antialiased selection:bg-brand-caramel selection:text-white">
+<body class="bg-sand text-stone-800 font-sans antialiased selection:bg-rosebrand-200 selection:text-rosebrand-900">
 
-  <!-- TOP BAR -->
-  <div class="bg-brand-dark text-brand-sand py-2 px-4 text-xs font-medium tracking-wide">
-    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-      <div class="flex items-center gap-4">
-        <span class="inline-flex items-center gap-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Presencial em <strong>Curitiba - PR</strong></span>
-        </span>
-        <span class="hidden md:inline text-brand-muted">|</span>
-        <span class="hidden md:inline text-brand-sand/80">
-          <i class="fa-solid fa-laptop-code text-brand-caramel mr-1"></i> Consultoria B2B Online p/ todo o Brasil
-        </span>
-      </div>
-      <div class="flex items-center gap-4">
-        <a href="mailto:leticia.vljlopes@gmail.com" class="hover:text-brand-caramel transition-colors flex items-center gap-1">
-          <i class="fa-solid fa-envelope"></i> leticia.vljlopes@gmail.com
-        </a>
-        <a href="https://www.linkedin.com/in/leticia-lopes-94a2b36b" target="_blank" class="hover:text-brand-caramel transition-colors flex items-center gap-1">
-          <i class="fa-brands fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://instagram.com/leticia.verginia" target="_blank" class="hover:text-brand-caramel transition-colors flex items-center gap-1">
-          <i class="fa-brands fa-instagram"></i> @leticia.verginia
-        </a>
-        <a href="https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia,%20vi%20seu%20site%20e%20gostaria%20de%20conversar." target="_blank" class="hover:text-brand-caramel transition-colors flex items-center gap-1 font-semibold text-brand-caramel">
-          <i class="fa-brands fa-whatsapp"></i> (41) 99138-9803
-        </a>
-      </div>
-    </div>
-  </div>
+    <!-- LINK DE ACESSIBILIDADE PARA SALTAR AO CONTEÚDO -->
+    <a href="#conteudo-principal" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-stone-900 text-white rounded-lg shadow-lg font-medium text-xs">
+        Pular para o conteúdo principal
+    </a>
 
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-20">
-        
-        <a href="#hero" class="flex flex-col group">
-          <span class="font-serif-title text-2xl sm:text-3xl font-bold tracking-tight text-brand-dark group-hover:text-brand-caramel transition-colors">
-            LETÍCIA LOPES
-          </span>
-          <span class="text-[10px] tracking-[0.25em] uppercase text-brand-muted -mt-1 font-semibold">
-            Hair Stylist & Gestão de Salões
-          </span>
-        </a>
-
-        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-brand-charcoal">
-          <a href="#sobre" class="hover:text-brand-caramel transition-colors">Sobre</a>
-          <a href="#atuacao" class="hover:text-brand-caramel transition-colors">Áreas de Atuação</a>
-          <a href="#qualificacoes" class="hover:text-brand-caramel transition-colors">Formações & Cursos</a>
-          <a href="#diferenciais" class="hover:text-brand-caramel transition-colors">Diferenciais</a>
-          <a href="#depoimentos" class="hover:text-brand-caramel transition-colors">Depoimentos</a>
-          <a href="#localizacao" class="hover:text-brand-caramel transition-colors">Atendimento</a>
-        </nav>
-
-        <div class="hidden sm:flex items-center gap-3">
-          <a href="#contato" class="px-5 py-2.5 rounded-full border border-brand-caramel text-brand-caramel hover:bg-brand-caramel hover:text-white font-medium text-xs tracking-wider uppercase transition-all duration-300">
-            Fale Comigo
-          </a>
-          <a href="https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia!%20Acessei%20seu%20site%20e%20gostaria%20de%20uma%20conversa." target="_blank" class="px-5 py-2.5 rounded-full bg-brand-dark hover:bg-brand-caramel text-white font-medium text-xs tracking-wider uppercase transition-all duration-300 flex items-center gap-2 shadow-md">
-            <i class="fa-brands fa-whatsapp text-sm text-emerald-400"></i> WhatsApp
-          </a>
-        </div>
-
-        <button id="mobileMenuBtn" class="lg:hidden p-2 text-brand-dark hover:text-brand-caramel focus:outline-none" aria-label="Abrir Menu">
-          <i class="fa-solid fa-bars text-xl"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-brand-nude border-b border-brand-beige px-6 py-6 space-y-4 shadow-xl">
-      <a href="#sobre" class="mobile-nav-link block text-base font-medium text-brand-charcoal hover:text-brand-caramel">Sobre Letícia</a>
-      <a href="#atuacao" class="mobile-nav-link block text-base font-medium text-brand-charcoal hover:text-brand-caramel">Áreas de Atuação (Colaboradora & B2B)</a>
-      <a href="#qualificacoes" class="mobile-nav-link block text-base font-medium text-brand-charcoal hover:text-brand-caramel">Formações Técnicas</a>
-      <a href="#diferenciais" class="mobile-nav-link block text-base font-medium text-brand-charcoal hover:text-brand-caramel">Diferenciais</a>
-      <a href="#depoimentos" class="mobile-nav-link block text-base font-medium text-brand-charcoal hover:text-brand-caramel">Depoimentos</a>
-      <a href="#localizacao" class="mobile-nav-link block text-base font-medium text-brand-charcoal hover:text-brand-caramel">Localização & Contato</a>
-      <div class="pt-4 border-t border-brand-beige flex flex-col gap-3">
-        <a href="https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia,%20vim%20pelo%20site!" target="_blank" class="w-full text-center py-3 bg-brand-caramel text-white font-semibold rounded-lg flex items-center justify-center gap-2">
-          <i class="fa-brands fa-whatsapp text-lg"></i> Chamar no WhatsApp
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section id="hero" class="relative hero-pattern pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-sand border border-brand-beige text-xs font-semibold uppercase tracking-widest text-brand-caramel shadow-sm">
-            <i class="fa-solid fa-award text-sm"></i> 15+ Anos de Experiência e Qualificação
-          </div>
-
-          <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-dark leading-[1.15]">
-            Excelência Técnica de Bancada e <span class="gold-gradient-text italic">Governança Estratégica</span> para Salões de Beleza.
-          </h1>
-
-          <p class="text-base sm:text-lg text-brand-muted max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-            Profissional de elite especializada em cortes de precisão (formada por especialista habilitado nas metodologias mundiais Pivot Point & Toni & Guy), colorimetria avançada e visagismo. Consultora B2B dedicada a transformar a gestão financeira, processos e equipes em negócios altamente lucrativos.
-          </p>
-
-          <div class="p-4 sm:p-5 rounded-2xl glass-card shadow-sm border border-brand-beige/80 text-left">
-            <span class="text-xs font-bold uppercase tracking-wider text-brand-caramel block mb-2">
-              <i class="fa-solid fa-bullseye mr-1"></i> Como você deseja trabalhar com a Letícia?
-            </span>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <a href="#atuacao-colaboradora" onclick="switchTab('colaboradora')" class="p-3.5 rounded-xl bg-white hover:bg-brand-sand border border-brand-beige transition-all group flex items-start gap-3">
-                <div class="w-9 h-9 rounded-lg bg-brand-rose/20 text-brand-caramel flex items-center justify-center flex-shrink-0 group-hover:bg-brand-caramel group-hover:text-white transition-colors">
-                  <i class="fa-solid fa-scissors"></i>
-                </div>
-                <div>
-                  <div class="text-xs font-bold text-brand-dark group-hover:text-brand-caramel">Contratar para seu Salão</div>
-                  <div class="text-[11px] text-brand-muted">Hair Stylist Sênior, Líder de Bancada ou Gerente (Curitiba/PR).</div>
-                </div>
-              </a>
-
-              <a href="#atuacao-consultoria" onclick="switchTab('consultoria')" class="p-3.5 rounded-xl bg-white hover:bg-brand-sand border border-brand-beige transition-all group flex items-start gap-3">
-                <div class="w-9 h-9 rounded-lg bg-brand-accentGreen/15 text-brand-accentGreen flex items-center justify-center flex-shrink-0 group-hover:bg-brand-accentGreen group-hover:text-white transition-colors">
-                  <i class="fa-solid fa-chart-pie"></i>
-                </div>
-                <div>
-                  <div class="text-xs font-bold text-brand-dark group-hover:text-brand-accentGreen">Consultoria & Mentoria B2B</div>
-                  <div class="text-[11px] text-brand-muted">Gestão financeira, tempo, DRE e processos (Online / Brasil).</div>
-                </div>
-              </a>
+    <!-- BARRA SUPERIOR DE INFORMAÇÕES -->
+    <div class="bg-stone-900 text-stone-300 text-xs py-2.5 px-4 border-b border-stone-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-4">
+                <span class="flex items-center gap-1.5 text-amber-300 font-medium">
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-300" aria-hidden="true"></i> 
+                    <span>Atendimento 5 Estrelas Exclusivo</span>
+                </span>
+                <span class="hidden md:inline text-stone-600" aria-hidden="true">|</span>
+                <span class="hidden md:flex items-center gap-1 text-stone-300">
+                    <i data-lucide="clock" class="w-3.5 h-3.5 text-rosebrand-400" aria-hidden="true"></i> Terça a Sábado: Com Hora Marcada
+                </span>
             </div>
-          </div>
-
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
-            <a href="https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia!%20Gostaria%20de%20agendar%20uma%20conversa%20estrat%C3%A9gica." target="_blank" class="px-7 py-3.5 rounded-full bg-brand-dark hover:bg-brand-caramel text-white font-semibold text-xs sm:text-sm tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
-              <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i> Agendar Conversa Direta
-            </a>
-            <button onclick="openPortfolioModal('colaboradora')" class="px-6 py-3.5 rounded-full bg-brand-sand hover:bg-brand-caramel hover:text-white border border-brand-beige text-brand-dark font-semibold text-xs sm:text-sm transition-all duration-300 shadow-sm flex items-center gap-2">
-              <i class="fa-solid fa-file-powerpoint text-brand-caramel"></i> Ver Slides Candidatura
-            </button>
-            <button onclick="openPortfolioModal('consultoria')" class="px-6 py-3.5 rounded-full bg-white hover:bg-brand-accentGreen hover:text-white border border-brand-beige text-brand-charcoal font-semibold text-xs sm:text-sm transition-all duration-300 shadow-sm flex items-center gap-2">
-              <i class="fa-solid fa-chart-line text-brand-accentGreen"></i> Ver Slides B2B
-            </button>
-          </div>
-
-          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-brand-beige">
-            <div>
-              <div class="font-serif-title text-2xl sm:text-3xl font-bold text-brand-caramel">15+</div>
-              <div class="text-xs text-brand-muted font-medium">Anos no Mercado da Beleza</div>
-            </div>
-            <div>
-              <div class="font-serif-title text-2xl sm:text-3xl font-bold text-brand-caramel">95%</div>
-              <div class="text-xs text-brand-muted font-medium">Aproveitamento Pivot Point / T&G</div>
-            </div>
-            <div>
-              <div class="font-serif-title text-2xl sm:text-3xl font-bold text-brand-caramel">360°</div>
-              <div class="text-xs text-brand-muted font-medium">Técnica + Gestão & Finanças</div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="lg:col-span-5 relative flex justify-center">
-          <div class="relative w-full max-w-md">
-            <div class="absolute -inset-4 bg-gradient-to-tr from-brand-caramel/20 to-brand-rose/20 rounded-3xl transform rotate-2 blur-sm"></div>
-
-            <div class="relative bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-brand-beige/80 space-y-6">
-              
-              <div class="flex items-center gap-4">
-                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-sand to-brand-rose flex items-center justify-center text-brand-caramel text-3xl font-serif-title font-bold shadow-inner border-2 border-white">
-                  LL
-                </div>
-                <div>
-                  <h3 class="font-serif-title text-2xl font-bold text-brand-dark">Vergínia Letícia</h3>
-                  <p class="text-xs text-brand-caramel font-semibold uppercase tracking-wider">Letícia Lopes</p>
-                  <p class="text-xs text-brand-muted mt-0.5">Executiva & Hair Stylist Sênior</p>
-                </div>
-              </div>
-
-              <div class="space-y-3 text-xs text-brand-charcoal">
-                <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-brand-nude border border-brand-sand">
-                  <i class="fa-solid fa-graduation-cap text-brand-caramel text-sm"></i>
-                  <span>Formada por especialista em <strong>Pivot Point & Toni & Guy</strong></span>
-                </div>
-                <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-brand-nude border border-brand-sand">
-                  <i class="fa-solid fa-wand-magic-sparkles text-brand-caramel text-sm"></i>
-                  <span>Especialista em Colorimetria Hands-On (<strong>DiColore</strong>)</span>
-                </div>
-                <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-brand-nude border border-brand-sand">
-                  <i class="fa-solid fa-coins text-brand-caramel text-sm"></i>
-                  <span>Consultora de Governança, DRE e Lucro p/ Salões</span>
-                </div>
-                <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-brand-nude border border-brand-sand">
-                  <i class="fa-solid fa-location-dot text-brand-caramel text-sm"></i>
-                  <span>Base em <strong>Curitiba - PR</strong> (Presencial) e Remoto (Nacional)</span>
-                </div>
-              </div>
-
-              <div class="pt-2 flex items-center justify-between border-t border-brand-sand">
-                <a href="https://www.linkedin.com/in/leticia-lopes-94a2b36b" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-muted hover:text-brand-caramel transition-colors">
-                  <i class="fa-brands fa-linkedin text-base text-blue-600"></i> LinkedIn
+            <div class="flex items-center gap-4 text-stone-300 text-xs">
+                <a href="https://wa.me/5541999000000?text=Olá%20Letícia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20horário." 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="hover:text-white transition-colors inline-flex items-center gap-1.5 font-semibold text-rosebrand-300 min-h-[36px] px-1">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5" aria-hidden="true"></i> Agendamento Direto no WhatsApp
                 </a>
-                <a href="https://instagram.com/leticia.verginia" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-muted hover:text-brand-caramel transition-colors">
-                  <i class="fa-brands fa-instagram text-base text-pink-600"></i> Instagram
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-rosebrand-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logotipo -->
+                <a href="#" class="flex flex-col group py-1" aria-label="Letícia Lopes - Página Inicial">
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-stone-900 group-hover:text-rosebrand-700 transition-colors">
+                        LETÍCIA LOPES
+                    </span>
+                    <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] sm:tracking-[0.25em] text-rosebrand-700 font-semibold truncate">
+                        Beleza • Visagismo • Estética
+                    </span>
                 </a>
-                <a href="https://wa.me/5541991389803" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-dark hover:text-brand-caramel transition-colors">
-                  <i class="fa-brands fa-whatsapp text-base text-emerald-600"></i> Whats
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-stone-700" aria-label="Navegação Principal">
+                    <a href="#inicio" class="hover:text-rosebrand-700 transition-colors py-2">Início</a>
+                    <a href="#sobre" class="hover:text-rosebrand-700 transition-colors py-2">Sobre Mim</a>
+                    <a href="#servicos" class="hover:text-rosebrand-700 transition-colors py-2">Serviços</a>
+                    <a href="#simulador" class="hover:text-rosebrand-700 transition-colors py-2">Agendamento</a>
+                    <a href="#contato" class="hover:text-rosebrand-700 transition-colors py-2">Contato</a>
+                </nav>
+
+                <!-- Botão CTA Desktop -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/5541999000000?text=Olá%20Letícia!%20Gostaria%20de%20consultar%20disponibilidade%20de%20horários." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 px-5 min-h-[44px] rounded-full bg-rosebrand-700 hover:bg-rosebrand-800 text-white font-medium text-sm transition-all shadow-sm hover:shadow active:scale-95">
+                        <i data-lucide="calendar" class="w-4 h-4" aria-hidden="true"></i>
+                        Agendar Horário
+                    </a>
+                </div>
+
+                <!-- Botão Mobile Menu (Acessível) -->
+                <div class="flex lg:hidden">
+                    <button id="mobileMenuBtn" 
+                            class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-stone-800 hover:bg-stone-100 focus:outline-none" 
+                            aria-label="Abrir Menu de Navegação" 
+                            aria-expanded="false" 
+                            aria-controls="mobileMenu">
+                        <i data-lucide="menu" id="menuIcon" class="w-6 h-6" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-rosebrand-100 px-6 py-6 space-y-4 shadow-xl max-w-full">
+            <a href="#inicio" class="block text-base font-medium text-stone-800 hover:text-rosebrand-700 mobile-link py-1.5">Início</a>
+            <a href="#sobre" class="block text-base font-medium text-stone-800 hover:text-rosebrand-700 mobile-link py-1.5">Sobre Mim</a>
+            <a href="#servicos" class="block text-base font-medium text-stone-800 hover:text-rosebrand-700 mobile-link py-1.5">Serviços Especializados</a>
+            <a href="#simulador" class="block text-base font-medium text-stone-800 hover:text-rosebrand-700 mobile-link py-1.5">Montar Meu Atendimento</a>
+            <a href="#contato" class="block text-base font-medium text-stone-800 hover:text-rosebrand-700 mobile-link py-1.5">Contato</a>
+            <div class="pt-2 flex flex-col gap-3">
+                <a href="https://wa.me/5541999000000?text=Olá%20Letícia!%20Gostaria%20de%20agendar%20um%20horário." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="w-full min-h-[48px] flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-emerald-700 text-white font-semibold text-sm shadow">
+                    <i data-lucide="message-circle" class="w-4 h-4" aria-hidden="true"></i>
+                    Falar no WhatsApp
                 </a>
-              </div>
-
             </div>
-          </div>
         </div>
+    </header>
 
-      </div>
-    </div>
-  </section>
+    <main id="conteudo-principal">
+        <!-- HERO SECTION -->
+        <section id="inicio" class="relative pt-10 pb-16 lg:pt-20 lg:pb-28 overflow-hidden bg-pattern">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    
+                    <!-- Conteúdo do Hero -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-rosebrand-200 shadow-sm text-xs font-semibold text-rosebrand-800">
+                            <span class="flex text-amber-400" aria-label="5 estrelas">★★★★★</span>
+                            <span>Atendimento Exclusivo & Personalizado</span>
+                        </div>
 
-  <!-- ABOUT SECTION -->
-  <section id="sobre" class="py-20 bg-white border-y border-brand-beige">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <div class="lg:col-span-5 space-y-6">
-          <div class="relative">
-            <div class="w-full h-80 sm:h-96 rounded-3xl bg-gradient-to-tr from-brand-sand via-brand-rose/20 to-brand-sand p-8 flex flex-col justify-between border border-brand-beige relative overflow-hidden">
-              
-              <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-brand-caramel/10 rounded-full blur-2xl"></div>
-              
-              <div>
-                <span class="text-xs font-bold uppercase tracking-widest text-brand-caramel">Trajetória & Autoridade</span>
-                <h3 class="font-serif-title text-3xl font-bold text-brand-dark mt-2">
-                  "Um salão de beleza de sucesso precisa de duas forças: precisão na bancada e inteligência nos números."
-                </h3>
-              </div>
+                        <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl text-stone-900 leading-[1.18] font-bold">
+                            Sua beleza com <span class="italic font-normal text-rosebrand-700">propósito, leveza e sofisticação</span>.
+                        </h1>
 
-              <div class="flex items-center gap-3 pt-6 border-t border-brand-beige/60">
-                <div class="w-12 h-12 rounded-full bg-brand-dark text-white flex items-center justify-center font-serif-title font-bold text-lg">
-                  LL
+                        <p class="text-stone-700 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Acredito na beleza que realça sua autenticidade. Consultorias de imagem, visagismo e procedimentos desenvolvidos sob medida para valorizar os seus traços únicos.
+                        </p>
+
+                        <!-- Botões de Ação -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="https://wa.me/5541999000000?text=Olá%20Letícia!%20Quero%20agendar%20um%20atendimento%20personalizado." 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 min-h-[52px] rounded-full bg-stone-900 hover:bg-stone-800 text-white font-semibold text-base transition-all shadow-lg hover:shadow-xl active:scale-95 group">
+                                <i data-lucide="message-circle" class="w-5 h-5 text-emerald-400 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+                                Agendar via WhatsApp
+                            </a>
+                            <a href="#servicos" 
+                               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 min-h-[52px] rounded-full bg-white hover:bg-rosebrand-50 text-stone-800 border border-rosebrand-300 font-medium text-base transition-all shadow-sm">
+                                <i data-lucide="sparkles" class="w-4 h-4 text-rosebrand-600" aria-hidden="true"></i>
+                                Conhecer Procedimentos
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card Visual Hero -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white aspect-[4/5]">
+                                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80" 
+                                     alt="Letícia Lopes realizando consultoria e maquiagem" 
+                                     class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
+                                     loading="eager">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 right-6 text-white">
+                                    <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[11px] font-semibold uppercase tracking-wider mb-2 inline-block">
+                                        Letícia Lopes
+                                    </span>
+                                    <h2 class="font-serif text-lg sm:text-xl font-bold">Visagismo & Estética Personalizada</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                  <div class="text-sm font-bold text-brand-dark">Vergínia Letícia J. Lopes</div>
-                  <div class="text-xs text-brand-muted">Hair Stylist & Mentora de Gestão</div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: SOBRE MIM -->
+        <section id="sobre" class="py-16 sm:py-24 bg-white border-y border-rosebrand-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-rosebrand-700 uppercase">
+                            <span class="w-8 h-px bg-rosebrand-400" aria-hidden="true"></span>
+                            Sobre Mim
+                        </div>
+                        
+                        <h2 class="font-serif text-2xl sm:text-4xl text-stone-900 font-bold leading-tight">
+                            Dedicação, precisão técnica e olhar atento ao que é essencial para você.
+                        </h2>
+
+                        <p class="text-stone-700 leading-relaxed text-sm sm:text-base">
+                            Meu objetivo é transformar cada momento de cuidado em uma experiência acolhedora. Combinando técnicas atualizadas e uma escuta atenta, ajudo você a encontrar a melhor expressão do seu estilo.
+                        </p>
+
+                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 rounded-2xl bg-rosebrand-50 border border-rosebrand-100">
+                                <h3 class="font-semibold text-stone-900 text-sm">Consultoria sob Medida</h3>
+                                <p class="text-xs text-stone-600 mt-1">Análise detalhada do seu perfil, estilo e necessidades.</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-rosebrand-50 border border-rosebrand-100">
+                                <h3 class="font-semibold text-stone-900 text-sm">Produtos Premium</h3>
+                                <p class="text-xs text-stone-600 mt-1">Materiais e cosméticos de alta segurança e eficácia.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6">
+                        <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-[4/3]">
+                            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Ambiente de atendimento elegante de Letícia Lopes" 
+                                 class="w-full h-full object-cover"
+                                 loading="lazy">
+                        </div>
+                    </div>
+
                 </div>
-              </div>
-
             </div>
-          </div>
+        </section>
 
-          <div class="grid grid-cols-2 gap-3 text-center">
-            <div class="p-4 rounded-2xl bg-brand-nude border border-brand-sand">
-              <div class="text-lg font-bold text-brand-caramel font-serif-title">Tradição RS & PR</div>
-              <div class="text-[11px] text-brand-muted">Experiência consolidada no Sul</div>
+        <!-- SERVIÇOS ESPECIALIZADOS -->
+        <section id="servicos" class="py-16 sm:py-24 bg-sand border-b border-rosebrand-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3">
+                    <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-rosebrand-700 uppercase">
+                        <span class="w-6 h-px bg-rosebrand-400" aria-hidden="true"></span>
+                        Especialidades
+                        <span class="w-6 h-px bg-rosebrand-400" aria-hidden="true"></span>
+                    </div>
+                    <h2 class="font-serif text-2xl sm:text-4xl font-bold text-stone-900">Serviços Oferecidos</h2>
+                    <p class="text-stone-700 text-sm sm:text-base">
+                        Cuidados minuciosos com foco em naturalidade, elegância e durabilidade.
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    <div class="bg-white rounded-3xl p-6 sm:p-7 border border-rosebrand-200/80 shadow-sm space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-rosebrand-100 flex items-center justify-center text-rosebrand-800">
+                            <i data-lucide="sparkles" class="w-6 h-6" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-stone-900">Visagismo Capilar & Imagem</h3>
+                        <p class="text-stone-700 text-sm leading-relaxed">
+                            Mapeamento das linhas faciais e diagnóstico para cortes, tonalidades e formas ideais.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-6 sm:p-7 border border-rosebrand-200/80 shadow-sm space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-rosebrand-100 flex items-center justify-center text-rosebrand-800">
+                            <i data-lucide="smile" class="w-6 h-6" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-stone-900">Maquiagem Social & Eventos</h3>
+                        <p class="text-stone-700 text-sm leading-relaxed">
+                            Produções duradouras para festas, formaturas e momentos especiais com acabamento natural.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-6 sm:p-7 border border-rosebrand-200/80 shadow-sm space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-rosebrand-100 flex items-center justify-center text-rosebrand-800">
+                            <i data-lucide="heart" class="w-6 h-6" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-rosebrand-900">Design & Estética Facial</h3>
+                        <p class="text-stone-700 text-sm leading-relaxed">
+                            Modelagem de sobrancelhas e tratamentos faciais focados na saúde e simetria da sua pele.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="p-4 rounded-2xl bg-brand-nude border border-brand-sand">
-              <div class="text-lg font-bold text-brand-caramel font-serif-title">Perfil Hands-On</div>
-              <div class="text-[11px] text-brand-muted">Domínio prático & executivo</div>
+        </section>
+
+        <!-- PRÉ-AGENDAMENTO INTELIGENTE -->
+        <section id="simulador" class="py-16 sm:py-20 bg-white border-b border-rosebrand-200/70">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-sand rounded-3xl p-6 sm:p-10 shadow-lg border border-rosebrand-200 text-center space-y-6">
+                    <div class="space-y-2">
+                        <span class="px-3 py-1 rounded-full bg-rosebrand-100 text-rosebrand-800 text-xs font-bold uppercase tracking-wider inline-block">
+                            Atendimento Ágil
+                        </span>
+                        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">
+                            Monte seu atendimento
+                        </h2>
+                        <p class="text-stone-600 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
+                            Selecione o que deseja para enviarmos uma mensagem formatada ao WhatsApp.
+                        </p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-3 text-left pt-2">
+                        <label class="flex items-center gap-3 p-4 rounded-2xl border border-stone-200 bg-white hover:bg-rosebrand-50 cursor-pointer transition-colors min-h-[52px]">
+                            <input type="checkbox" value="Consultoria de Visagismo" class="service-checkbox w-4 h-4 text-rosebrand-700 rounded focus:ring-rosebrand-500">
+                            <span class="text-xs sm:text-sm font-semibold text-stone-800">Consultoria de Visagismo</span>
+                        </label>
+
+                        <label class="flex items-center gap-3 p-4 rounded-2xl border border-stone-200 bg-white hover:bg-rosebrand-50 cursor-pointer transition-colors min-h-[52px]">
+                            <input type="checkbox" value="Maquiagem Profissional" class="service-checkbox w-4 h-4 text-rosebrand-700 rounded focus:ring-rosebrand-500">
+                            <span class="text-xs sm:text-sm font-semibold text-stone-800">Maquiagem Profissional</span>
+                        </label>
+
+                        <label class="flex items-center gap-3 p-4 rounded-2xl border border-stone-200 bg-white hover:bg-rosebrand-50 cursor-pointer transition-colors min-h-[52px]">
+                            <input type="checkbox" value="Design de Sobrancelhas" class="service-checkbox w-4 h-4 text-rosebrand-700 rounded focus:ring-rosebrand-500">
+                            <span class="text-xs sm:text-sm font-semibold text-stone-800">Design de Sobrancelhas</span>
+                        </label>
+
+                        <label class="flex items-center gap-3 p-4 rounded-2xl border border-stone-200 bg-white hover:bg-rosebrand-50 cursor-pointer transition-colors min-h-[52px]">
+                            <input type="checkbox" value="Estética & Tratamento Facial" class="service-checkbox w-4 h-4 text-rosebrand-700 rounded focus:ring-rosebrand-500">
+                            <span class="text-xs sm:text-sm font-semibold text-stone-800">Estética & Tratamento Facial</span>
+                        </label>
+                    </div>
+
+                    <div class="pt-4">
+                        <button id="sendCustomWhatsApp" 
+                                class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 min-h-[52px] rounded-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm transition-all shadow-md active:scale-95">
+                            <i data-lucide="message-circle" class="w-5 h-5" aria-hidden="true"></i>
+                            Solicitar Disponibilidade
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
+        </section>
 
-        <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-sand text-xs font-bold uppercase tracking-widest text-brand-caramel">
-            Conheça Letícia Lopes
-          </div>
-
-          <h2 class="font-serif-title text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark leading-tight">
-            Mais de 15 anos transformando clientes em embaixadoras e salões em negócios de alta lucratividade.
-          </h2>
-
-          <div class="space-y-4 text-brand-muted text-sm sm:text-base leading-relaxed">
-            <p>
-              Ao longo de mais de uma década e meia de atuação no mercado da beleza pelo Rio Grande do Sul e agora com base em <strong>Curitiba - PR</strong>, <strong>Letícia Lopes</strong> construiu uma carreira fundamentada em dois pilares raros de se encontrar reunidos em uma mesma profissional: <strong>o domínio técnico de altíssima precisão e a visão estratégica de governança e finanças</strong>.
-            </p>
-            <p>
-              Sua capacitação técnica foi lapidada por imersões com profissional especialista credenciado e habilitado nas metodologias mundiais <strong>Pivot Point</strong> e <strong>Toni & Guy</strong> (com aproveitamento de 95% em 96 horas de curso intensivo de cortes e visagismo), além de formações em colorimetria avançada (*Master Class DiColore*), mechas (*Prime Pro Extreme*) e química capilar (*Mutari*).
-            </p>
-            <p>
-              Por trás das cadeiras, Letícia compreendeu que a grande dor dos salões não é apenas cortar ou colorir, mas sim a <strong>gestão de tempo, organização da equipe, controle rigoroso de insumos químicos e precificação com margem real de lucro</strong>. É essa visão 360° que ela entrega hoje tanto a salões contratantes quanto em suas consultorias de assessoria B2B.
-            </p>
-          </div>
-
-          <div class="pt-4 flex flex-wrap items-center gap-4">
-            <a href="https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia!%20Li%20sua%20trajet%C3%B3ria%20no%20site%20e%20gostaria%20de%20conversar." target="_blank" class="px-6 py-3 rounded-full bg-brand-caramel hover:bg-brand-dark text-white font-medium text-xs tracking-wider uppercase transition-all shadow-md">
-              Conversar com Letícia
-            </a>
-            <a href="https://www.linkedin.com/in/leticia-lopes-94a2b36b" target="_blank" class="px-6 py-3 rounded-full bg-white hover:bg-brand-sand border border-brand-beige text-brand-dark font-medium text-xs tracking-wider uppercase transition-all shadow-sm flex items-center gap-2">
-              <i class="fa-brands fa-linkedin text-blue-600"></i> Ver LinkedIn
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- DUAL VALUE PROPOSITION / INTERACTIVE TABS -->
-  <section id="atuacao" class="py-24 bg-brand-nude relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
-        <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-sand text-xs font-bold uppercase tracking-widest text-brand-caramel">
-          Áreas de Atuação Especializada
-        </span>
-        <h2 class="font-serif-title text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark">
-          Soluções sob Medida para Salões e Empresários
-        </h2>
-        <p class="text-brand-muted text-sm sm:text-base">
-          Escolha abaixo a modalidade de atuação de seu interesse para entender detalhadamente o escopo de trabalho e os resultados entregues.
-        </p>
-
-        <div class="inline-flex p-1.5 rounded-2xl bg-brand-sand border border-brand-beige mt-6 max-w-full overflow-x-auto shadow-inner">
-          <button id="tabBtnColaboradora" onclick="switchTab('colaboradora')" class="px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 bg-brand-dark text-white shadow-md flex items-center gap-2 whitespace-nowrap">
-            <i class="fa-solid fa-scissors text-brand-caramel"></i>
-            1. Contratação para Salão (Colaboradora / Líder)
-          </button>
-          <button id="tabBtnConsultoria" onclick="switchTab('consultoria')" class="px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 text-brand-charcoal hover:text-brand-caramel flex items-center gap-2 whitespace-nowrap">
-            <i class="fa-solid fa-chart-line text-brand-accentGreen"></i>
-            2. Consultoria & Assessoria B2B (Online / Brasil)
-          </button>
-        </div>
-      </div>
-
-      <!-- TAB CONTENT 1: COLABORADORA SÊNIOR -->
-      <div id="tabContentColaboradora" class="space-y-12 transition-all duration-500">
-        
-        <div class="p-6 sm:p-8 rounded-3xl bg-white border border-brand-beige shadow-sm">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-8 space-y-3">
-              <span class="text-xs font-bold uppercase tracking-wider text-brand-rose">Para Grandes Salões de Beleza & Redes de Luxo</span>
-              <h3 class="font-serif-title text-2xl sm:text-3xl font-bold text-brand-dark">
-                Contratação como Colaboradora Sênior, Hair Stylist & Líder de Bancada
-              </h3>
-              <p class="text-brand-muted text-sm leading-relaxed">
-                Ideal para salões em <strong>Curitiba e região</strong> que buscam uma profissional com padrão de atendimento impecável, pontualidade britânica, postura executiva e fidelização comprovada de clientes de alto padrão aquisitivo.
-              </p>
-            </div>
-            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
-              <a href="https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia,%20somos%20um%20sal%C3%A3o%20e%20temos%20interesse%20em%20sua%20contrata%C3%A7%C3%A3o." target="_blank" class="px-6 py-3.5 rounded-xl bg-brand-dark hover:bg-brand-caramel text-white font-semibold text-xs tracking-wider uppercase text-center transition-all shadow-md flex items-center justify-center gap-2">
-                <i class="fa-brands fa-whatsapp text-emerald-400"></i> Proposta de Contratação
-              </a>
-              <button onclick="openPortfolioModal('colaboradora')" class="px-6 py-3 rounded-xl bg-brand-sand hover:bg-brand-caramel hover:text-white border border-brand-beige text-brand-dark font-semibold text-xs tracking-wider uppercase text-center transition-all flex items-center justify-center gap-2">
-                <i class="fa-solid fa-expand"></i> Abrir Portfólio Candidatura (Slides)
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="p-6 rounded-2xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-brand-rose/15 text-brand-caramel flex items-center justify-center text-xl">
-              <i class="fa-solid fa-ruler-combined"></i>
-            </div>
-            <h4 class="font-serif-title text-xl font-bold text-brand-dark">Cortes de Alta Precisão & Visagismo</h4>
-            <p class="text-xs text-brand-muted leading-relaxed">
-              Treinada por especialista habilitado nas metodologias <strong>Pivot Point & Toni & Guy</strong>. Cortes estilizados com análise facial.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-brand-rose/15 text-brand-caramel flex items-center justify-center text-xl">
-              <i class="fa-solid fa-palette"></i>
-            </div>
-            <h4 class="font-serif-title text-xl font-bold text-brand-dark">Colorimetria Hands-On & Mechas</h4>
-            <p class="text-xs text-brand-muted leading-relaxed">
-              Domínio da estrela de Oswald, neutralização, morenas iluminadas, loiros platinados e correções complexas com proteção capilar.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-brand-rose/15 text-brand-caramel flex items-center justify-center text-xl">
-              <i class="fa-solid fa-spa"></i>
-            </div>
-            <h4 class="font-serif-title text-xl font-bold text-brand-dark">Tratamentos & Químicas Seguras</h4>
-            <p class="text-xs text-brand-muted leading-relaxed">
-              Transformação capilar segura, cronogramas de reconstrução, selagens e realinhamentos com selo de qualidade Casa Mutari.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-brand-rose/15 text-brand-caramel flex items-center justify-center text-xl">
-              <i class="fa-solid fa-gem"></i>
-            </div>
-            <h4 class="font-serif-title text-xl font-bold text-brand-dark">Atendimento VIP & Maquiagem</h4>
-            <p class="text-xs text-brand-muted leading-relaxed">
-              Especialista em maquiagem avançada (Márcia Cabrera), produção para noivas e eventos de gala com altíssimo ticket médio.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- TAB CONTENT 2: CONSULTORIA B2B -->
-      <div id="tabContentConsultoria" class="hidden space-y-12 transition-all duration-500">
-        <div class="p-6 sm:p-8 rounded-3xl bg-brand-accentGreen text-white shadow-xl">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-8 space-y-3">
-              <span class="text-xs font-bold uppercase tracking-wider text-brand-sand/80">Para Donos de Salão, Gestores e Investidores</span>
-              <h3 class="font-serif-title text-2xl sm:text-3xl font-bold text-white">
-                Consultoria de Gestão Financeira, DRE, Processos e Produtividade B2B
-              </h3>
-              <p class="text-brand-sand/90 text-sm leading-relaxed">
-                Consultoria prática e objetiva para salões que faturam mas não vêem a cor do lucro. Eliminação de desperdícios de produtos, criação de DRE, precificação técnica e treinamento da equipe. <strong>Atendimento 100% online para todo o Brasil ou presencial</strong>.
-              </p>
-            </div>
-            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
-              <a href="https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia,%20sou%20dono(a)%20de%20sal%C3%A3o%20e%20gostaria%20de%20um%20diagn%C3%B3stico%20B2B." target="_blank" class="px-6 py-3.5 rounded-xl bg-brand-caramel hover:bg-white hover:text-brand-dark text-white font-semibold text-xs tracking-wider uppercase text-center transition-all shadow-md flex items-center justify-center gap-2">
-                <i class="fa-brands fa-whatsapp text-white"></i> Solicitar Diagnóstico B2B
-              </a>
-              <button onclick="openPortfolioModal('consultoria')" class="px-6 py-3 rounded-xl bg-emerald-900/60 hover:bg-white hover:text-brand-dark text-white border border-emerald-700/50 font-semibold text-xs tracking-wider uppercase text-center transition-all flex items-center justify-center gap-2">
-                <i class="fa-solid fa-expand"></i> Abrir Apresentação B2B (Slides)
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="p-6 rounded-2xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-accentGreen flex items-center justify-center text-xl">
-              <i class="fa-solid fa-calculator"></i>
-            </div>
-            <h4 class="font-serif-title text-xl font-bold text-brand-dark">DRE, Custos & Precificação Real</h4>
-            <p class="text-xs text-brand-muted leading-relaxed">
-              Cálculo exato de gramatura de pó descolorante, oxidante e coloração por atendimento. Eliminação do desperdício de insumos.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-accentGreen flex items-center justify-center text-xl">
-              <i class="fa-solid fa-clock"></i>
-            </div>
-            <h4 class="font-serif-title text-xl font-bold text-brand-dark">Gestão de Tempo & Produtividade</h4>
-            <p class="text-xs text-brand-muted leading-relaxed">
-              Otimização de agenda, eliminação de gargalos no lavatório e padronização do tempo de atendimento por cadeira.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-accentGreen flex items-center justify-center text-xl">
-              <i class="fa-solid fa-users-gear"></i>
-            </div>
-            <h4 class="font-serif-title text-xl font-bold text-brand-dark">Liderança de Equipe & Comissões</h4>
-            <p class="text-xs text-brand-muted leading-relaxed">
-              Estruturação de regras claras de convivência, planos de comissionamento motivadores e redução de turnover.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-accentGreen flex items-center justify-center text-xl">
-              <i class="fa-solid fa-chalkboard-user"></i>
-            </div>
-            <h4 class="font-serif-title text-xl font-bold text-brand-dark">Treinamentos Técnicos In-Company</h4>
-            <p class="text-xs text-brand-muted leading-relaxed">
-              Capacitação da sua equipe com técnicas modernas de corte, mechas e postura para elevar o ticket médio.
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FORMATIONS & CERTIFICATIONS -->
-  <section id="qualificacoes" class="py-20 bg-white border-y border-brand-beige">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-        <div class="space-y-3">
-          <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-sand text-xs font-bold uppercase tracking-widest text-brand-caramel">
-            Bagagem Técnica Comprovada
-          </span>
-          <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-brand-dark">
-            Formações & Certificações Realizadas
-          </h2>
-          <p class="text-brand-muted text-sm max-w-xl">
-            Histórico acadêmico e prático conquistado com especialistas credenciados e grandes marcas industriais.
-          </p>
-        </div>
-
-        <a href="https://www.linkedin.com/in/leticia-lopes-94a2b36b" target="_blank" class="flex items-center gap-2 text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors">
-          <i class="fa-brands fa-linkedin text-lg"></i>
-          <span>Ver Perfil Completo no LinkedIn</span>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-brand-nude border border-brand-beige/80 hover:border-brand-caramel transition-all space-y-3 relative group">
-          <div class="flex justify-between items-start">
-            <span class="px-2.5 py-1 rounded-md bg-brand-caramel text-white text-[10px] font-bold uppercase tracking-wider">
-              96h • 95% Aproveitamento
-            </span>
-            <span class="text-xs text-brand-muted font-medium">Pelotas - RS</span>
-          </div>
-          <h4 class="font-serif-title text-xl font-bold text-brand-dark group-hover:text-brand-caramel transition-colors">
-            Cortes & Visagismo: Pivot Point & Toni & Guy
-          </h4>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Formada por especialista habilitado nas metodologias Pivot Point & Toni & Guy. Geometria de cortes e angulação tridimensional no Tiago Freitas Beleza e Estética.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-brand-nude border border-brand-beige/80 hover:border-brand-caramel transition-all space-y-3 relative group">
-          <div class="flex justify-between items-start">
-            <span class="px-2.5 py-1 rounded-md bg-brand-dark text-white text-[10px] font-bold uppercase tracking-wider">
-              Master Class Hands-On
-            </span>
-            <span class="text-xs text-brand-muted font-medium">Santa Maria - RS</span>
-          </div>
-          <h4 class="font-serif-title text-xl font-bold text-brand-dark group-hover:text-brand-caramel transition-colors">
-            Especialização Técnica DiColore Profissional
-          </h4>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Colorimetria prática profunda, fundos de clareamento, neutralização e técnicas exclusivas *Color Hands-On*.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-brand-nude border border-brand-beige/80 hover:border-brand-caramel transition-all space-y-3 relative group">
-          <div class="flex justify-between items-start">
-            <span class="px-2.5 py-1 rounded-md bg-brand-rose text-white text-[10px] font-bold uppercase tracking-wider">
-              Mechas & Visagismo
-            </span>
-            <span class="text-xs text-brand-muted font-medium">Porto Alegre - RS</span>
-          </div>
-          <h4 class="font-serif-title text-xl font-bold text-brand-dark group-hover:text-brand-caramel transition-colors">
-            Prime Pro Extreme: Wolpy & Lacerda
-          </h4>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Técnicas avançadas de descoloração, clareamento sem manchas, proteção da fibra e visagismo contemporâneo.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-brand-nude border border-brand-beige/80 hover:border-brand-caramel transition-all space-y-3 relative group">
-          <div class="flex justify-between items-start">
-            <span class="px-2.5 py-1 rounded-md bg-brand-caramel text-white text-[10px] font-bold uppercase tracking-wider">
-              Módulos I & II (16h)
-            </span>
-            <span class="text-xs text-brand-muted font-medium">Bagé - RS</span>
-          </div>
-          <h4 class="font-serif-title text-xl font-bold text-brand-dark group-hover:text-brand-caramel transition-colors">
-            Maquiagem Profissional & Social Avançada
-          </h4>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Preparação de pele blindada, contornos e técnicas especializadas com Márcia Cabrera Makeup Artist.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-brand-nude border border-brand-beige/80 hover:border-brand-caramel transition-all space-y-3 relative group">
-          <div class="flex justify-between items-start">
-            <span class="px-2.5 py-1 rounded-md bg-brand-dark text-white text-[10px] font-bold uppercase tracking-wider">
-              Alisamentos & Mechas
-            </span>
-            <span class="text-xs text-brand-muted font-medium">Pelotas - RS</span>
-          </div>
-          <h4 class="font-serif-title text-xl font-bold text-brand-dark group-hover:text-brand-caramel transition-colors">
-            Especialização Mutari Cosméticos
-          </h4>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Capacitação técnica em relaxamento, alisamento térmico, compatibilidade química e tratamentos intensivos.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-brand-nude border border-brand-beige/80 hover:border-brand-caramel transition-all space-y-3 relative group">
-          <div class="flex justify-between items-start">
-            <span class="px-2.5 py-1 rounded-md bg-brand-rose text-white text-[10px] font-bold uppercase tracking-wider">
-              Congresso Regional
-            </span>
-            <span class="text-xs text-brand-muted font-medium">Pelotas - RS</span>
-          </div>
-          <h4 class="font-serif-title text-xl font-bold text-brand-dark group-hover:text-brand-caramel transition-colors">
-            1º Encontro Regional de Marcas
-          </h4>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Imersão com educadores de marcas industriais: DiColore, Salvatore, Mutari, Floractive, Pravda e Bell Key.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- DIFERENCIAIS SECTION -->
-  <section id="diferenciais" class="py-20 bg-brand-nude">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-        <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-sand text-xs font-bold uppercase tracking-widest text-brand-caramel">
-          Por Que Escolher Letícia Lopes?
-        </span>
-        <h2 class="font-serif-title text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark">
-          Diferenciais de Excelência
-        </h2>
-        <p class="text-brand-muted text-sm sm:text-base">
-          A combinação única de precisão artística na bancada com governança de resultados e visão estratégica de negócios.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <div class="p-8 rounded-3xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-brand-rose/15 text-brand-caramel flex items-center justify-center text-2xl">
-            <i class="fa-solid fa-eye"></i>
-          </div>
-          <h3 class="font-serif-title text-2xl font-bold text-brand-dark">Visão Sistêmica 360°</h3>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            União rara entre habilidade técnica artística e conhecimento profundo de finanças, DRE e governança de salões de beleza de alto padrão.
-          </p>
-        </div>
-
-        <div class="p-8 rounded-3xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-accentGreen flex items-center justify-center text-2xl">
-            <i class="fa-solid fa-coins"></i>
-          </div>
-          <h3 class="font-serif-title text-2xl font-bold text-brand-dark">Redução de Desperdício</h3>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Controle rigoroso de gramatura de tinturas, oxidantes e descolorantes, gerando economia imediata no custo das mercadorias vendidas (CMV).
-          </p>
-        </div>
-
-        <div class="p-8 rounded-3xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-brand-rose/15 text-brand-caramel flex items-center justify-center text-2xl">
-            <i class="fa-solid fa-stopwatch"></i>
-          </div>
-          <h3 class="font-serif-title text-2xl font-bold text-brand-dark">Gestão de Tempo na Cadeira</h3>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Otimização da agenda, redução de ociosidade e otimização do tempo no lavatório e secagem sem jamais perder a qualidade do atendimento VIP.
-          </p>
-        </div>
-
-        <div class="p-8 rounded-3xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-brand-rose/15 text-brand-caramel flex items-center justify-center text-2xl">
-            <i class="fa-solid fa-award"></i>
-          </div>
-          <h3 class="font-serif-title text-2xl font-bold text-brand-dark">Formação com Especialista Habilitado</h3>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Técnica lapidada em cortes e visagismo pelas metodologias internacionais Pivot Point e Toni & Guy, garantindo padrão internacional.
-          </p>
-        </div>
-
-        <div class="p-8 rounded-3xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-accentGreen flex items-center justify-center text-2xl">
-            <i class="fa-solid fa-users-gear"></i>
-          </div>
-          <h3 class="font-serif-title text-2xl font-bold text-brand-dark">Liderança Positiva & Turnover</h3>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Capacidade de treinar assistentes, engajar a equipe e criar uma cultura de pertencimento, ética e padronização operacional.
-          </p>
-        </div>
-
-        <div class="p-8 rounded-3xl bg-white border border-brand-sand shadow-sm hover:shadow-md hover:-translate-y-1 transition-all space-y-4">
-          <div class="w-14 h-14 rounded-2xl bg-brand-rose/15 text-brand-caramel flex items-center justify-center text-2xl">
-            <i class="fa-solid fa-heart-circle-check"></i>
-          </div>
-          <h3 class="font-serif-title text-2xl font-bold text-brand-dark">Elevada Fidelização VIP</h3>
-          <p class="text-xs text-brand-muted leading-relaxed">
-            Diagnóstico capilar minucioso, escuta ativa e postura executiva que transformam primeira visita em cliente assídua e embaixadora da marca.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- DEPOIMENTOS SECTION -->
-  <section id="depoimentos" class="py-20 bg-white border-y border-brand-beige">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
-        <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-sand text-xs font-bold uppercase tracking-widest text-brand-caramel">
-          Prova Social & Depoimentos
-        </span>
-        <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-brand-dark">
-          O Que Dizem Nossos Parceiros e Clientes
-        </h2>
-        <p class="text-xs sm:text-sm text-brand-muted">
-          Reconhecimento de empresários da beleza, gestores de espaços e clientes atendidas pela Letícia Lopes.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <div class="p-6 rounded-3xl bg-brand-nude border border-brand-beige flex flex-col justify-between space-y-6">
-          <div class="space-y-3">
-            <div class="text-brand-gold text-xs">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-xs text-brand-charcoal italic leading-relaxed">
-              "A consultoria B2B da Letícia revolucionou nosso controle de estoque e precificação. Tivemos uma redução de 35% no desperdício de produtos químicos e a equipe passou a trabalhar com um DRE claro."
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-brand-beige/60">
-            <div class="w-9 h-9 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-xs">
-              MR
-            </div>
-            <div>
-              <div class="text-xs font-bold text-brand-dark">Marcelo Rocha</div>
-              <div class="text-[10px] text-brand-muted">Proprietário de Salão (Pelotas - RS)</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-3xl bg-brand-nude border border-brand-beige flex flex-col justify-between space-y-6">
-          <div class="space-y-3">
-            <div class="text-brand-gold text-xs">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-xs text-brand-charcoal italic leading-relaxed">
-              "A postura profissional da Letícia na bancada e sua pontualidade são exemplares. Além da maestria nos cortes e mechas, ela traz organização para a equipe. As clientes exigem ser atendidas por ela."
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-brand-beige/60">
-            <div class="w-9 h-9 rounded-full bg-brand-caramel text-white flex items-center justify-center font-bold text-xs">
-              CS
-            </div>
-            <div>
-              <div class="text-xs font-bold text-brand-dark">Carla Silveira</div>
-              <div class="text-[10px] text-brand-muted">Gerente de Espaço de Beleza (Curitiba)</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-3xl bg-brand-nude border border-brand-beige flex flex-col justify-between space-y-6">
-          <div class="space-y-3">
-            <div class="text-brand-gold text-xs">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-xs text-brand-charcoal italic leading-relaxed">
-              "A mentoria de gestão financeira da Letícia trouxe a previsibilidade e a governança que nos faltavam. Hoje sabemos exatamente o custo por atendimento e a margem real de cada cadeira."
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-brand-beige/60">
-            <div class="w-9 h-9 rounded-full bg-brand-accentGreen text-white flex items-center justify-center font-bold text-xs">
-              RM
-            </div>
-            <div>
-              <div class="text-xs font-bold text-brand-dark">Dr. Roberto Mendes</div>
-              <div class="text-[10px] text-brand-muted">Sócio & Investidor de Salão</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-3xl bg-brand-nude border border-brand-beige flex flex-col justify-between space-y-6">
-          <div class="space-y-3">
-            <div class="text-brand-gold text-xs">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="text-xs text-brand-charcoal italic leading-relaxed">
-              "Confio meu cabelo à Letícia há anos. A análise de visagismo que ela faz antes de cada corte ou coloração é incrível, preserva a saúde do fio e entrega exatamente o que preciso para minha rotina executiva."
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-brand-beige/60">
-            <div class="w-9 h-9 rounded-full bg-brand-rose text-white flex items-center justify-center font-bold text-xs">
-              PF
-            </div>
-            <div>
-              <div class="text-xs font-bold text-brand-dark">Patrícia Fontes</div>
-              <div class="text-[10px] text-brand-muted">Advogada & Cliente VIP</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LOCALIZATION & CONTACT -->
-  <section id="localizacao" class="py-20 bg-brand-nude">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        
-        <div class="lg:col-span-5 space-y-6">
-          <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-sand text-xs font-bold uppercase tracking-widest text-brand-caramel">
-            Área de Atendimento
-          </span>
-          <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-brand-dark">
-            Como e Onde Atuar com Letícia Lopes
-          </h2>
-
-          <div class="space-y-4">
-            <div class="p-5 rounded-2xl bg-white border border-brand-beige shadow-sm flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-caramel/10 text-brand-caramel flex items-center justify-center text-xl flex-shrink-0">
-                <i class="fa-solid fa-map-location-dot"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-brand-dark text-sm">Presencial: Curitiba - PR</h4>
-                <p class="text-xs text-brand-muted mt-1">
-                  Disponível para contratação por salões, posições sênior, liderança de equipe e gerência operacional.
+        <!-- CONTATO E FOOTER -->
+        <section id="contato" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-stone-900">Entre em Contato</h2>
+                <p class="text-stone-700 text-sm max-w-md mx-auto">
+                    Atendimento com hora marcada para garantir sua total privacidade e conforto.
                 </p>
-              </div>
+                <div class="pt-2">
+                    <a href="https://wa.me/5541999000000" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 min-h-[52px] rounded-full bg-rosebrand-700 hover:bg-rosebrand-800 text-white font-medium text-sm transition-all shadow-md">
+                        <i data-lucide="message-circle" class="w-5 h-5" aria-hidden="true"></i>
+                        Falar com Letícia Lopes
+                    </a>
+                </div>
             </div>
+        </section>
+    </main>
 
-            <div class="p-5 rounded-2xl bg-white border border-brand-beige shadow-sm flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-brand-accentGreen/15 text-brand-accentGreen flex items-center justify-center text-xl flex-shrink-0">
-                <i class="fa-solid fa-globe"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-brand-dark text-sm">Remoto / Online: Todo o Brasil</h4>
-                <p class="text-xs text-brand-muted mt-1">
-                  Mentorias individuais B2B, diagnóstico financeiro de salões, elaboração de DRE e gestão de tempo.
-                </p>
-              </div>
-            </div>
-          </div>
+    <!-- RODAPÉ -->
+    <footer class="bg-stone-950 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs space-y-4">
+            <p class="font-serif text-lg font-bold text-white">LETÍCIA LOPES</p>
+            <p>© 2026 Letícia Lopes. Todos os direitos reservados.</p>
         </div>
+    </footer>
 
-        <div id="contato" class="lg:col-span-7">
-          <div class="p-8 sm:p-10 rounded-3xl bg-white border border-brand-beige shadow-xl space-y-6">
-            
-            <div>
-              <span class="text-xs font-bold uppercase tracking-widest text-brand-caramel">Inicie seu Contato</span>
-              <h3 class="font-serif-title text-2xl sm:text-3xl font-bold text-brand-dark mt-1">
-                Vamos Agendar uma Conversa?
-              </h3>
-            </div>
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <aside aria-label="Contato rápido no WhatsApp" class="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center group">
+        <a href="https://wa.me/5541999000000?text=Olá%20Letícia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="min-w-[56px] min-h-[56px] rounded-full bg-emerald-700 hover:bg-emerald-800 text-white flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all"
+           aria-label="Agendar via WhatsApp">
+            <i data-lucide="message-circle" class="w-7 h-7" aria-hidden="true"></i>
+        </a>
+    </aside>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <a href="mailto:leticia.vljlopes@gmail.com" class="p-4 rounded-2xl bg-amber-50 border border-amber-200 hover:bg-amber-100 transition-all text-center group">
-                <i class="fa-solid fa-envelope text-2xl text-brand-caramel block mb-1"></i>
-                <div class="font-bold text-brand-dark text-xs">E-mail Profissional</div>
-                <div class="text-[10px] text-amber-900 font-semibold truncate">leticia.vljlopes@gmail.com</div>
-              </a>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
 
-              <a href="https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia,%20acessei%20seu%20site%20e%20gostaria%20de%20conversar." target="_blank" class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition-all text-center">
-                <i class="fa-brands fa-whatsapp text-2xl text-emerald-600 block mb-1"></i>
-                <div class="font-bold text-brand-dark text-xs">WhatsApp</div>
-                <div class="text-[10px] text-emerald-800 font-semibold">(41) 99138-9803</div>
-              </a>
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
 
-              <a href="https://www.linkedin.com/in/leticia-lopes-94a2b36b" target="_blank" class="p-4 rounded-2xl bg-blue-50 border border-blue-200 hover:bg-blue-100 transition-all text-center">
-                <i class="fa-brands fa-linkedin text-2xl text-blue-600 block mb-1"></i>
-                <div class="font-bold text-brand-dark text-xs">LinkedIn</div>
-                <div class="text-[10px] text-blue-800 font-semibold">Perfil Profissional</div>
-              </a>
+            if (mobileMenuBtn && mobileMenu) {
+                const toggleMenu = () => {
+                    const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                    mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                };
 
-              <a href="https://instagram.com/leticia.verginia" target="_blank" class="p-4 rounded-2xl bg-pink-50 border border-pink-200 hover:bg-pink-100 transition-all text-center">
-                <i class="fa-brands fa-instagram text-2xl text-pink-600 block mb-1"></i>
-                <div class="font-bold text-brand-dark text-xs">Instagram</div>
-                <div class="text-[10px] text-pink-800 font-semibold">@leticia.verginia</div>
-              </a>
-            </div>
+                mobileMenuBtn.addEventListener('click', toggleMenu);
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    });
+                });
 
-            <div class="p-4 rounded-2xl bg-brand-nude border border-brand-sand space-y-2">
-              <label class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal">
-                Mensagem Automática Direta
-              </label>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <a href="https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia!%20Represento%20um%20sal%C3%A3o%20e%20gostaria%20de%20avaliar%20sua%20contrata%C3%A7%C3%A3o." target="_blank" class="text-left text-xs p-2.5 rounded-xl bg-white border border-brand-beige hover:border-brand-caramel hover:text-brand-caramel transition-all">
-                  <i class="fa-solid fa-briefcase text-brand-caramel mr-1"></i> Quero contratar para salão
-                </a>
-                <a href="https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia!%20Sou%20propriet%C3%A1rio(a)%20de%20sal%C3%A3o%20e%20gostaria%20de%20consultoria%20B2B." target="_blank" class="text-left text-xs p-2.5 rounded-xl bg-white border border-brand-beige hover:border-brand-caramel hover:text-brand-caramel transition-all">
-                  <i class="fa-solid fa-chart-pie text-brand-accentGreen mr-1"></i> Quero consultoria B2B
-                </a>
-              </div>
-            </div>
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                        mobileMenuBtn.focus();
+                    }
+                });
+            }
 
-          </div>
-        </div>
+            const sendCustomBtn = document.getElementById('sendCustomWhatsApp');
+            if (sendCustomBtn) {
+                sendCustomBtn.addEventListener('click', () => {
+                    const checkboxes = document.querySelectorAll('.service-checkbox:checked');
+                    const selectedServices = Array.from(checkboxes).map(cb => cb.value);
 
-      </div>
+                    let message = "Olá Letícia! Vim pelo seu site.";
+                    if (selectedServices.length > 0) {
+                        message += " Tenho interesse em:\n- " + selectedServices.join("\n- ");
+                        message += "\n\nGostaria de verificar a disponibilidade de horários.";
+                    } else {
+                        message += " Gostaria de consultar informações e horários disponíveis.";
+                    }
 
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-brand-dark text-brand-sand py-12 border-t border-brand-charcoal">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-brand-charcoal/80">
-        <div class="space-y-3 md:col-span-2">
-          <span class="font-serif-title text-2xl font-bold tracking-tight text-white block">
-            LETÍCIA LOPES
-          </span>
-          <p class="text-xs text-brand-sand/70 max-w-md leading-relaxed">
-            Vergínia Letícia Juliani Lopes • Hair Stylist Sênior, Visagista e Consultora de Governança para Salões de Beleza.
-          </p>
-          <div class="flex items-center gap-3 pt-2">
-            <a href="https://www.linkedin.com/in/leticia-lopes-94a2b36b" target="_blank" class="w-8 h-8 rounded-full bg-brand-charcoal hover:bg-brand-caramel text-brand-sand flex items-center justify-center transition-colors">
-              <i class="fa-brands fa-linkedin-in text-xs"></i>
-            </a>
-            <a href="https://instagram.com/leticia.verginia" target="_blank" class="w-8 h-8 rounded-full bg-brand-charcoal hover:bg-brand-caramel text-brand-sand flex items-center justify-center transition-colors">
-              <i class="fa-brands fa-instagram text-xs"></i>
-            </a>
-            <a href="https://wa.me/5541991389803" target="_blank" class="w-8 h-8 rounded-full bg-brand-charcoal hover:bg-brand-caramel text-brand-sand flex items-center justify-center transition-colors">
-              <i class="fa-brands fa-whatsapp text-xs"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="space-y-2">
-          <h4 class="text-xs font-bold uppercase tracking-widest text-brand-caramel">Navegação</h4>
-          <ul class="space-y-1 text-xs text-brand-sand/70">
-            <li><a href="#sobre" class="hover:text-white transition-colors">Sobre Letícia</a></li>
-            <li><a href="#atuacao" class="hover:text-white transition-colors">Contratação Salão</a></li>
-            <li><a href="#atuacao" class="hover:text-white transition-colors">Consultoria B2B</a></li>
-            <li><a href="#qualificacoes" class="hover:text-white transition-colors">Cursos & Certificações</a></li>
-          </ul>
-        </div>
-
-        <div class="space-y-2">
-          <h4 class="text-xs font-bold uppercase tracking-widest text-brand-caramel">Contato</h4>
-          <p class="text-xs text-brand-sand/70"><strong class="text-white">E-mail:</strong> leticia.vljlopes@gmail.com</p>
-          <p class="text-xs text-brand-sand/70"><strong class="text-white">Whats:</strong> (41) 99138-9803</p>
-          <p class="text-xs text-brand-sand/70"><strong class="text-white">Insta:</strong> @leticia.verginia</p>
-          <p class="text-xs text-brand-sand/70"><strong class="text-white">Base:</strong> Curitiba - PR</p>
-        </div>
-      </div>
-
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-sand/50">
-        <div>&copy; <span id="currentYear"></span> Letícia Lopes. Todos os direitos reservados.</div>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia!%20Acessei%20seu%20site%20e%20gostaria%20de%20falar%20com%20voc%C3%AA." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-all duration-300" aria-label="WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <!-- MODAL VISUALIZADOR DE PORTFÓLIO SLIDES NATIVO -->
-  <div id="portfolioModal" class="fixed inset-0 z-[100] hidden bg-black/85 backdrop-blur-md flex flex-col justify-between p-2 sm:p-6 transition-all duration-300">
-    
-    <!-- Modal Header -->
-    <div class="flex items-center justify-between bg-brand-dark text-white px-4 sm:px-6 py-3.5 rounded-t-2xl border-b border-brand-charcoal">
-      <div class="flex items-center gap-3">
-        <i id="modalIcon" class="fa-solid fa-scissors text-brand-caramel text-lg"></i>
-        <div>
-          <h3 id="modalTitle" class="font-serif-title text-lg sm:text-xl font-bold">Portfólio Interativo - Letícia Lopes</h3>
-          <p id="modalSubtitle" class="text-[11px] sm:text-xs text-brand-sand/70">Apresentação de Slides Executiva</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-3">
-        <span id="slideCounter" class="text-xs px-3 py-1 bg-brand-charcoal rounded-full text-brand-sand font-mono font-bold">Slide 1 / 12</span>
-        <button onclick="closePortfolioModal()" class="w-9 h-9 rounded-full bg-brand-charcoal hover:bg-red-600 text-white flex items-center justify-center transition-colors">
-          <i class="fa-solid fa-xmark text-lg"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Modal Canvas Slide Container -->
-    <div class="flex-1 bg-brand-charcoal overflow-hidden rounded-b-2xl shadow-2xl relative flex items-center justify-center p-2 sm:p-6">
-      
-      <!-- Native Slide Frame -->
-      <div id="slideDisplayArea" class="w-full max-w-5xl h-full max-h-[680px] bg-[#FAF6F0] rounded-2xl p-6 sm:p-10 flex flex-col justify-between shadow-2xl relative overflow-y-auto">
-        <!-- Content dynamically injected by JS -->
-      </div>
-
-    </div>
-
-    <!-- Modal Footer Controls -->
-    <div class="flex items-center justify-between bg-brand-dark text-white px-4 sm:px-6 py-3 rounded-b-2xl border-t border-brand-charcoal mt-1">
-      <button onclick="prevSlide()" class="px-4 py-2 rounded-xl bg-brand-charcoal hover:bg-brand-caramel text-xs font-bold transition-colors flex items-center gap-2">
-        <i class="fa-solid fa-chevron-left"></i> Anterior
-      </button>
-      
-      <div class="text-[11px] text-brand-sand/60 hidden sm:block">
-        Use as setas do teclado ou toque na tela para navegar
-      </div>
-
-      <button onclick="nextSlide()" class="px-4 py-2 rounded-xl bg-brand-caramel hover:bg-brand-dark hover:text-brand-caramel text-white text-xs font-bold transition-colors flex items-center gap-2">
-        Próximo <i class="fa-solid fa-chevron-right"></i>
-      </button>
-    </div>
-
-  </div>
-
-  <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-
-    function switchTab(tab) {
-      const btnColab = document.getElementById('tabBtnColaboradora');
-      const btnConsult = document.getElementById('tabBtnConsultoria');
-      const contentColab = document.getElementById('tabContentColaboradora');
-      const contentConsult = document.getElementById('tabContentConsultoria');
-
-      if (tab === 'colaboradora') {
-        btnColab.className = "px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 bg-brand-dark text-white shadow-md flex items-center gap-2 whitespace-nowrap";
-        btnConsult.className = "px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 text-brand-charcoal hover:text-brand-caramel flex items-center gap-2 whitespace-nowrap";
-
-        contentColab.classList.remove('hidden');
-        contentConsult.classList.add('hidden');
-      } else {
-        btnConsult.className = "px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 bg-brand-accentGreen text-white shadow-md flex items-center gap-2 whitespace-nowrap";
-        btnColab.className = "px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 text-brand-charcoal hover:text-brand-caramel flex items-center gap-2 whitespace-nowrap";
-
-        contentConsult.classList.remove('hidden');
-        contentColab.classList.add('hidden');
-      }
-    }
-
-    /* SLIDE DATA ARRAYS (COLABORADORA & CONSULTORIA) */
-    const slidesColaboradora = [
-      {
-        badge: "Candidatura Executiva",
-        title: "Letícia Lopes",
-        subtitle: "Hair Stylist Sênior, Visagista e Gestora de Bancada",
-        content: "<p class='text-base text-brand-muted max-w-2xl mx-auto'>Mais de 15 anos de excelência unindo técnica internacional de cortes (formada por especialista habilitado em Pivot Point & Toni & Guy) com liderança de equipes e fidelização VIP em Curitiba - PR.</p>"
-      },
-      {
-        badge: "Perfil do Talento",
-        title: "Por que Letícia Lopes?",
-        subtitle: "A união rara entre arte técnica e governança",
-        content: "<p class='text-base text-brand-charcoal leading-relaxed max-w-2xl mx-auto'>Profissional completa que une pontualidade britânica, postura executiva, domínio de químicas e cores com capacidade comprovada de reter clientes de alto ticket e elevar a reputação do salão.</p>"
-      },
-      {
-        badge: "Formação Técnica",
-        title: "Pivot Point & Toni & Guy",
-        subtitle: "96 horas com 95% de aproveitamento comprovado",
-        content: "<div class='space-y-3 text-left max-w-xl mx-auto text-sm text-brand-charcoal'><div class='p-3 bg-white rounded-xl border border-brand-sand'><i class='fa-solid fa-check text-brand-caramel mr-2'></i><strong>Geometria Tridimensional:</strong> Angulação de cortes curtos, médios, longos e estilizados.</div><div class='p-3 bg-white rounded-xl border border-brand-sand'><i class='fa-solid fa-check text-brand-caramel mr-2'></i><strong>Visagismo Contemporâneo:</strong> Harmonização de traços faciais para recomendação consultiva.</div></div>"
-      },
-      {
-        badge: "Especialização DiColore",
-        title: "Master Class Colorimetria",
-        subtitle: "Domínio avançado de neutralização e mechas",
-        content: "<p class='text-sm text-brand-muted max-w-xl mx-auto mb-4'>Capacitação profunda em fundos de clareamento, Morenas Iluminadas, Loiros Platinados e técnicas Color Hands-On desenvolvidas pela DiColore Profissional.</p>"
-      },
-      {
-        badge: "Maquiagem & Atendimento",
-        title: "Márcia Cabrera Makeup",
-        subtitle: "Produção Social Avançada (Módulos I & II)",
-        content: "<p class='text-sm text-brand-charcoal max-w-xl mx-auto'>Preparação de pele blindada, contornos, noivas, formandas e atendimento de gala com alto ticket médio.</p>"
-      },
-      {
-        badge: "Zelo e Processos",
-        title: "Uso Consciente de Insumos",
-        subtitle: "Proteção da margem do salão contratante",
-        content: "<p class='text-sm text-brand-muted max-w-xl mx-auto'>Pesagem rigorosa de tubos de tinta, pó e oxidantes por atendimento. Eliminação do desperdício no lavatório e preservação do CMV do espaço.</p>"
-      },
-      {
-        badge: "Experiência de Cadeira",
-        title: "Fidelização de Clientes VIP",
-        subtitle: "Escuta ativa e diagnóstico minucioso",
-        content: "<p class='text-sm text-brand-charcoal max-w-xl mx-auto'>Atendimento consultivo que transforma primeira visita em cliente assídua, garantindo reagendamentos mensais e venda de linhas home-care.</p>"
-      },
-      {
-        badge: "Cargos Pretendidos",
-        title: "Funções de Atuação",
-        subtitle: "Agregando valor imediato à operação",
-        content: "<div class='grid grid-cols-1 sm:grid-cols-3 gap-3 text-left text-xs max-w-2xl mx-auto'><div class='p-4 bg-white rounded-2xl border border-brand-sand'><h4 class='font-bold text-brand-dark mb-1'>Hair Stylist Sênior</h4><p class='text-brand-muted'>Atendimento de alta precisão e visagismo.</p></div><div class='p-4 bg-white rounded-2xl border border-brand-sand'><h4 class='font-bold text-brand-dark mb-1'>Gerente Operacional</h4><p class='text-brand-muted'>Supervisão de escala, estoque e padrões.</p></div><div class='p-4 bg-white rounded-2xl border border-brand-sand'><h4 class='font-bold text-brand-dark mb-1'>Líder de Equipe</h4><p class='text-brand-muted'>Treinamento e alinhamento de assistentes.</p></div></div>"
-      },
-      {
-        badge: "Compromisso Ético",
-        title: "Valores Inegociáveis",
-        subtitle: "Elegância, respeito e pontualidade",
-        content: "<blockquote class='font-serif-title text-2xl italic text-brand-dark max-w-xl mx-auto'>'A beleza de alta performance nasce do respeito absoluto à técnica, da atenção aos detalhes e do zelo com o cliente e a equipe.'</blockquote>"
-      },
-      {
-        badge: "Agende uma Entrevista",
-        title: "Disponível para Propostas",
-        subtitle: "Atendimento Presencial em Curitiba - PR",
-        content: "<div class='pt-2 flex justify-center gap-3'><a href='https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia,%20gostaria%20de%20agendar%20uma%20entrevista%20de%20contrata%C3%A7%C3%A3o.' target='_blank' class='px-6 py-3 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center gap-2'><i class='fa-brands fa-whatsapp'></i> Chamar no WhatsApp</a></div>"
-      }
-    ];
-
-    const slidesConsultoria = [
-      {
-        badge: "Consultoria B2B & Mentoria",
-        title: "Governança para Salões",
-        subtitle: "Gestão Financeira, DRE, Tempo e Equipes",
-        content: "<p class='text-base text-brand-muted max-w-2xl mx-auto'>Aceleração prática e objetiva para salões de beleza que faturam mas não enxergam a cor do lucro. Atendimento online para todo o Brasil.</p>"
-      },
-      {
-        badge: "Diagnóstico de Mercado",
-        title: "Os Grandes Vazamentos",
-        subtitle: "Por que salões perdem dinheiro diariamente?",
-        content: "<div class='space-y-3 text-left max-w-xl mx-auto text-xs text-brand-charcoal'><div class='p-3 bg-red-50 border border-red-200 rounded-xl'><strong class='text-red-700 block'>1. Desperdício de Insumos:</strong> Falta de medição na preparação de descolorantes e tinturas.</div><div class='p-3 bg-red-50 border border-red-200 rounded-xl'><strong class='text-red-700 block'>2. Gargalos na Agenda:</strong> Atrasos no lavatório e ociosidade da cadeira.</div><div class='p-3 bg-red-50 border border-red-200 rounded-xl'><strong class='text-red-700 block'>3. Precificação Incorreta:</strong> Cobrança sem DRE ou margem líquida calculada.</div></div>"
-      },
-      {
-        badge: "Solução B2B",
-        title: "Metodologia de Resultados",
-        subtitle: "Transformando o salão em uma empresa sólida",
-        content: "<p class='text-sm text-brand-charcoal max-w-xl mx-auto mb-3'>Criação de DRE simplificado, tabela de custos por gramatura de produto, padronização do tempo de cadeira e plano de comissionamento motivador.</p>"
-      },
-      {
-        badge: "Resultados Médios",
-        title: "Impacto Imediato no Caixa",
-        subtitle: "Indicadores dos salões assessorados",
-        content: "<div class='grid grid-cols-2 gap-4 max-w-lg mx-auto text-center'><div class='p-5 bg-emerald-50 rounded-2xl border border-emerald-200'><div class='text-3xl font-bold text-emerald-800 font-serif-title'>-35%</div><div class='text-xs text-emerald-900 font-semibold mt-1'>Desperdício de Química</div></div><div class='p-5 bg-emerald-50 rounded-2xl border border-emerald-200'><div class='text-3xl font-bold text-emerald-800 font-serif-title'>+40%</div><div class='text-xs text-emerald-900 font-semibold mt-1'>Margem Real no DRE</div></div></div>"
-      },
-      {
-        badge: "Formatos de Serviço",
-        title: "Como Podemos Trabalhar",
-        subtitle: "Flexibilidade para o seu momento de negócio",
-        content: "<div class='space-y-2 text-left text-xs max-w-xl mx-auto'><div class='p-3 bg-white rounded-xl border border-brand-sand'><strong>1. Diagnóstico Express:</strong> Análise de custos e pontos de vazamento.</div><div class='p-3 bg-white rounded-xl border border-brand-sand'><strong>2. Assessoria Mensal Remota:</strong> Acompanhamento semanal de metas e DRE.</div><div class='p-3 bg-white rounded-xl border border-brand-sand'><strong>3. Workshops In-Company:</strong> Treinamento de técnica e postura para a equipe.</div></div>"
-      },
-      {
-        badge: "Solicite um Diagnóstico",
-        title: "Agende sua Reunião B2B",
-        subtitle: "Atendimento Online para todo o Brasil",
-        content: "<div class='pt-2 flex justify-center gap-3'><a href='https://wa.me/5541991389803?text=Ol%C3%A1%20Let%C3%ADcia,%20sou%20dono(a)%20de%20sal%C3%A3o%20e%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20B2B.' target='_blank' class='px-6 py-3 rounded-full bg-brand-accentGreen text-white font-bold text-xs flex items-center gap-2'><i class='fa-brands fa-whatsapp'></i> Solicitar Diagnóstico no WhatsApp</a></div>"
-      }
-    ];
-
-    let currentSlideType = 'colaboradora';
-    let currentSlideIndex = 0;
-
-    function openPortfolioModal(type) {
-      currentSlideType = type;
-      currentSlideIndex = 0;
-      
-      const modal = document.getElementById('portfolioModal');
-      const title = document.getElementById('modalTitle');
-      const subtitle = document.getElementById('modalSubtitle');
-      const icon = document.getElementById('modalIcon');
-
-      if (type === 'colaboradora') {
-        title.textContent = 'Portfólio Candidatura - Letícia Lopes';
-        subtitle.textContent = 'Hair Stylist Sênior & Líder de Bancada em Curitiba';
-        icon.className = 'fa-solid fa-scissors text-brand-caramel text-lg';
-      } else {
-        title.textContent = 'Apresentação B2B - Consultoria & Gestão';
-        subtitle.textContent = 'Governança Financeira, DRE e Equipes (Brasil)';
-        icon.className = 'fa-solid fa-chart-pie text-emerald-400 text-lg';
-      }
-
-      renderSlide();
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closePortfolioModal() {
-      const modal = document.getElementById('portfolioModal');
-      modal.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    function renderSlide() {
-      const slideList = currentSlideType === 'colaboradora' ? slidesColaboradora : slidesConsultoria;
-      const slide = slideList[currentSlideIndex];
-      const displayArea = document.getElementById('slideDisplayArea');
-      const counter = document.getElementById('slideCounter');
-
-      counter.textContent = `Slide ${currentSlideIndex + 1} / ${slideList.length}`;
-
-      displayArea.innerHTML = `
-        <div class="text-center my-auto space-y-4">
-          <span class="inline-block px-3 py-1 rounded-full bg-brand-sand border border-brand-beige text-brand-caramel font-bold text-xs uppercase tracking-widest">${slide.badge}</span>
-          <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-brand-dark">${slide.title}</h2>
-          <p class="text-sm sm:text-base font-semibold text-brand-caramel -mt-2">${slide.subtitle}</p>
-          <div class="pt-4">${slide.content}</div>
-        </div>
-      `;
-    }
-
-    function prevSlide() {
-      const slideList = currentSlideType === 'colaboradora' ? slidesColaboradora : slidesConsultoria;
-      if (currentSlideIndex > 0) {
-        currentSlideIndex--;
-        renderSlide();
-      }
-    }
-
-    function nextSlide() {
-      const slideList = currentSlideType === 'colaboradora' ? slidesColaboradora : slidesConsultoria;
-      if (currentSlideIndex < slideList.length - 1) {
-        currentSlideIndex++;
-        renderSlide();
-      }
-    }
-
-    /* Keyboard navigation support */
-    document.addEventListener('keydown', (e) => {
-      const modal = document.getElementById('portfolioModal');
-      if (!modal.classList.contains('hidden')) {
-        if (e.key === 'ArrowRight') nextSlide();
-        if (e.key === 'ArrowLeft') prevSlide();
-        if (e.key === 'Escape') closePortfolioModal();
-      }
-    });
-  </script>
-
+                    const encodedMessage = encodeURIComponent(message);
+                    window.open(`https://wa.me/5541999000000?text=${encodedMessage}`, '_blank');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
